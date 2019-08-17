@@ -1,8 +1,9 @@
 {
-    "name": "conbine-request",
+    "name": "combine-request",
     "version": "0.0.1",
     "description": "combine request tool can be used to server side adn client side",
-    "main": "index.js",
+    "main": "./lib/index.js",
+    "types" : "./lib/index.d.ts",
     "scripts": {
         "test": "node ./dist/test/index.test.js",
         "build": "tsc"
