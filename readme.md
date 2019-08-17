@@ -41,7 +41,7 @@ console.log(await cbr.exec())
 ### Or add in server route
 
 ```ts
-app.get('/combin', conbineRoute)
+app.get('/combin', combineRoute)
 ```
 
 ### client side
