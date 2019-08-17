@@ -51,15 +51,15 @@ export async function combineRoute(req: Request, res: Response, next: NextFuncti
         throw new Error('domain is null or undefined');
     }
 
-    let cqb = new CombineRequest(body.domain);
+    let cbr = new CombineRequest(body.domain);
     let methods = ['get', 'head', 'post', 'put', 'delete', 'patch'];
-
+    
     for (let method of methods) {
         if (body[method] !== undefined) {
             body[method].forEach((p: { path: string, options: any }) =>
-                cqb[method](p.path, p.options));
+                cbr[method](p.path, p.options));
         }
     }
 
-    return res.json(await cqb.exec());
+    return res.json(await cbr.exec());
 }
