@@ -65,11 +65,12 @@ app.listen(9999, () => {
         } catch (err) {
             console.log(err)
         }
+        process.exit();
+
     }
 
     test1();
     test2();
-    process.exit();
 });
 
 
