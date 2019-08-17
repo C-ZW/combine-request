@@ -2,7 +2,7 @@ import rp from 'request-promise';
 import promise from 'bluebird'
 import { Request, Response, NextFunction } from 'express';
 
-export class ConbineRequest {
+export class CombineRequest {
     rq: Promise<any>[] = [];
     domain: string;
 
@@ -44,14 +44,14 @@ export class ConbineRequest {
     }
 }
 
-export async function conbineRoute(req: Request, res: Response, next: NextFunction) {
+export async function combineRoute(req: Request, res: Response, next: NextFunction) {
     let body = req.body;
 
     if (body.domain === null || body.domain === undefined) {
         throw new Error('domain is null or undefined');
     }
 
-    let cqb = new ConbineRequest(body.domain);
+    let cqb = new CombineRequest(body.domain);
     let methods = ['get', 'head', 'post', 'put', 'delete', 'patch'];
 
     for (let method of methods) {
